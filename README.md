@@ -1,1 +1,1 @@
-# vanilla-js-animated-slider
+# Vanilla JS Animated Slider
