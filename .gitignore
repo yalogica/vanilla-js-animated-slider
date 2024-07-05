@@ -1,0 +1,14 @@
+dist
+es
+.parcel-cache
+test-build
+documentation
+build
+node_modules
+package-lock.json
+yarn.lock
+
+# OS or Editor folders
+Thumbs.db
+.vscode
+.idea
