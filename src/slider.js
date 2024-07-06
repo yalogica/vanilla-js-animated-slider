@@ -61,30 +61,31 @@ const slider = function() {
         return null;
     }
 
-    // go to the prev slide
-    const prev = (e) => {
-        const $slider = closest(e.target, '.slider');
+    const goto = ($slider, direction) => {
         const $slides = $slider.querySelectorAll('.slider-slide');
         for(let i=0; i<$slides.length; i++) {
             if($slides[i].classList.contains('slider-active')) {
-                i = i>0 ? i-1 : $slides.length-1;
+                if (direction == 'prev') {
+                    i = i>0 ? i-1 : $slides.length-1;
+                } else if (direction == 'next') {
+                    i = i<$slides.length-1 ? i+1 : 0;
+                }
                 show($slides[i]);
                 break;
             }
         }
     }
 
+    // go to the prev slide
+    const prev = (e) => {
+        const $slider = closest(e.target, '.slider');
+        goto($slider, 'prev');
+    }
+
     // go to the next slide
     const next = (e) => {
         const $slider = closest(e.target, '.slider');
-        const $slides = $slider.querySelectorAll('.slider-slide');
-        for(let i=0; i<$slides.length; i++) {
-            if($slides[i].classList.contains('slider-active')) {
-                i = i<$slides.length-1 ? i+1 : 0;
-                show($slides[i]);
-                break;
-            }
-        }
+        goto($slider, 'next');
     }
 
     return this;
