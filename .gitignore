@@ -3,7 +3,6 @@ es
 .parcel-cache
 test-build
 documentation
-build
 node_modules
 package-lock.json
 yarn.lock
