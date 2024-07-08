@@ -16,4 +16,4 @@ gulp
 
 ## License
 
-[MIT licensed](LICENSE).
+[MIT](LICENSE).
