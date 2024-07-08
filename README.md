@@ -4,6 +4,8 @@ The website, a blank canvas, comes alive with sliders. They showcase pics, testi
 
 ![Demo](screenshot.gif)
 
+The full tutorial you can read [here](https://yalogica.com/blog/how-to-build-an-animated-slider-with-vanilla-javascript/)
+
 ## Getting Started
 
 ### Install
