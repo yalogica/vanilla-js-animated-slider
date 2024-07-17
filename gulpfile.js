@@ -7,6 +7,7 @@ import debug from 'gulp-debug';
 import autoprefixer from 'gulp-autoprefixer';
 import * as sass from 'sass'
 import gsass from 'gulp-sass';
+import {pathExistsSync} from 'path-exists';
 import browserSync from 'browser-sync';
 
 const config = {
@@ -28,7 +29,9 @@ const config = {
 }
 
 const do_clean = () => {
-    return gulp.src([config.build + '/*'], { read: false }).pipe(rimraf({ force: true }));
+    if(pathExistsSync(config.build)) {
+        return gulp.src([config.build + '/*'], { read: false }).pipe(rimraf({ force: true }));
+    }
 }
 
 const do_browserSync = (done) => {
